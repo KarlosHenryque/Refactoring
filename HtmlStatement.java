@@ -1,16 +1,16 @@
 public class HtmlStatement extends Statement {
-    protected String headerString(Customer aCustomer) {
+    protected String header(Customer aCustomer) {
         return "<H1>Rentals for <EM>" + aCustomer.getName() + "</EM></H1><P>\n";
     }
 
-    protected String eachRentalString(Rental aRental) {
+    protected String line(Rental aRental) {
         return aRental.getMovie().getTitle() + ": " +
                String.valueOf(aRental.getCharge()) + "<BR>\n";
     }
 
-    protected String footerString(Customer aCustomer) {
+    protected String footer(Customer aCustomer) {
         return "<P>You owe <EM>" + String.valueOf(aCustomer.getTotalCharge()) + "</EM><P>\n" +
-               "On this rental you earned <EM>" + 
+               "On this rental you earned <EM>" +
                String.valueOf(aCustomer.getTotalFrequentRenterPoints()) +
                "</EM> frequent renter points<P>";
     }

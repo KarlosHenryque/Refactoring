@@ -9,8 +9,8 @@ public class Customer {
         _name = name;
     }
 
-    public void addRental(Rental rental) {
-        _rentals.addElement(rental);
+    public void addRental(Rental arg) {
+        _rentals.addElement(arg);
     }
 
     public String getName() {

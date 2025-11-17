@@ -2,19 +2,17 @@ import java.util.Enumeration;
 
 public abstract class Statement {
     public String value(Customer aCustomer) {
-        Enumeration rentals = aCustomer.getRentals();
-        String result = headerString(aCustomer);
+        Enumeration<Rental> rentals = aCustomer.getRentals();
+        String result = header(aCustomer);
         while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
-            result += eachRentalString(each);
+            Rental each = rentals.nextElement();
+            result += line(each);
         }
-        result += footerString(aCustomer);
+        result += footer(aCustomer);
         return result;
     }
 
-    protected abstract String headerString(Customer aCustomer);
-
-    protected abstract String eachRentalString(Rental aRental);
-
-    protected abstract String footerString(Customer aCustomer);
+    protected abstract String header(Customer aCustomer);
+    protected abstract String line(Rental aRental);
+    protected abstract String footer(Customer aCustomer);
 }

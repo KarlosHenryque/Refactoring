@@ -6,9 +6,13 @@ public class Movie {
     private String _title;
     private Price _price;
 
-    public Movie(String name, int priceCode) {
-        _title = name;
+    public Movie(String title, int priceCode) {
+        _title = title;
         setPriceCode(priceCode);
+    }
+
+    public String getTitle() {
+        return _title;
     }
 
     public int getPriceCode() {
@@ -29,10 +33,6 @@ public class Movie {
             default:
                 throw new IllegalArgumentException("Incorrect Price Code");
         }
-    }
-
-    public String getTitle() {
-        return _title;
     }
 
     public double getCharge(int daysRented) {
